@@ -9,16 +9,14 @@ int ffdh(int h, int w) {
 	return W;
 }
 int main(void) {
-	int i, n, min;
-	scanf("%d", &n);
+	int i, n, min, ret;
+	ret = scanf("%d", &n);
 	int height[n], width[n], thick[n], H[n], W[n];
 	for (i=0; i<n; i++) {
-		scanf("%d %d %d", &height[i], &width[i], &thick[i]);
+		ret = scanf("%d %d %d", &height[i], &width[i], &thick[i]);
 		H[i] = width[i]*2 + thick[i] + 80;
 		W[i] = height[i];
 	}
-	//for (i=0; i<n; i++) printf("%d %d\n", H[i], W[i]);
 	for (i=0; i<n; i++) min = ffdh(H[i], W[i]);
 	printf("%d\n", min);
-	// TBD: retangle packing algorithm
 }
